@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Blanchoud Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prima-style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SYLVAIN BLANCHOUD</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="galeries.html">Galeries</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section">
+            <h1 class="section-title">Contact</h1>
+            <div class="contact-container">
+                <p class="contact-intro">
+                    Pour toute question sur ma démarche photographique, ma collection, ou pour réserver une œuvre, 
+                    je serais ravi d'échanger avec vous. Merci de remplir le formulaire ci-dessous ou de me contacter 
+                    directement par téléphone ou email.
+                </p>
+
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 20px;">Coordonnées Directes</h3>
+                    <p><strong>Téléphone :</strong> <a href="tel:+41788085958">+41 78 808 59 58</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
+                    <p style="margin-top: 30px; color: #666;">
+                        Basé à Neuchâtel, Suisse<br>
+                        Disponible pour projets sur demande
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sylvain Blanchoud</h4>
+                <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
+                    <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sylvain Blanchoud Photography</p>
+        </div>
+    </footer>
+</body>
+</html>
