@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeries - Blanchoud Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prima-style.css">
+    <style>
+        .gallery-view-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: #8B7355;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #6D5B47;
+        }
+        
+        .gallery-title-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .gallery-title-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #2C2C2C;
+            margin-bottom: 15px;
+        }
+        
+        #galerie-photos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SYLVAIN BLANCHOUD</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="galeries.html" class="active">Galeries</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Vue liste des galeries (par défaut) -->
+        <div id="galeries-list-view">
+            <section class="section">
+                <h1 class="section-title">Galeries Photographiques</h1>
+                <p class="section-subtitle">
+                    Découvrez mes séries photographiques par thème et par destination.
+                </p>
+            </section>
+
+            <div class="gallery-grid">
+                <!-- Galerie 1 : Vaud -->
+                <a href="#vaud" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="Canton de Vaud">
+                    <div class="gallery-overlay">
+                        <h3>Vaud</h3>
+                        <p>Lac Léman, vignobles et paysages vaudois</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 2 : Italie -->
+                <a href="#italie" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800" alt="Italie">
+                    <div class="gallery-overlay">
+                        <h3>Italie</h3>
+                        <p>Dolomites, Toscane et côtes italiennes</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 3 : France -->
+                <a href="#france" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="France">
+                    <div class="gallery-overlay">
+                        <h3>France</h3>
+                        <p>Alpes françaises, Provence et architecture</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 4 : Paris -->
+                <a href="#paris" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Paris">
+                    <div class="gallery-overlay">
+                        <h3>Paris</h3>
+                        <p>Architecture parisienne et lumières urbaines</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 5 : Naples -->
+                <a href="#naples" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=800" alt="Naples">
+                    <div class="gallery-overlay">
+                        <h3>Naples</h3>
+                        <p>Golfe de Naples, Vésuve et architecture napolitaine</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 6 : Genève -->
+                <a href="#geneve" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800" alt="Genève">
+                    <div class="gallery-overlay">
+                        <h3>Genève</h3>
+                        <p>Jet d'eau, lac Léman et architecture genevoise</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 7 : Grisons -->
+                <a href="#grisons" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="Grisons">
+                    <div class="gallery-overlay">
+                        <h3>Grisons</h3>
+                        <p>Alpes grisonnes, lacs de montagne et vallées</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 8 : Neuchâtel -->
+                <a href="#neuchatel" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=800" alt="Neuchâtel">
+                    <div class="gallery-overlay">
+                        <h3>Neuchâtel</h3>
+                        <p>Lac de Neuchâtel, Jura et architecture locale</p>
+                    </div>
+                </a>
+
+                <!-- Galerie 9 : Bern -->
+                <a href="#bern" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800" alt="Bern">
+                    <div class="gallery-overlay">
+                        <h3>Bern</h3>
+                        <p>Vieille ville, Aare et architecture bernoise</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Vue détail d'une galerie (cachée par défaut) -->
+        <div id="galerie-detail-view" style="display: none;">
+            <div class="gallery-view-container">
+                <a href="#" class="back-button" onclick="showGaleriesList(); return false;">← Retour aux galeries</a>
+                
+                <div class="gallery-title-section">
+                    <h2 id="current-gallery-title">Galerie</h2>
+                </div>
+                
+                <div id="galerie-photos-container">
+                    <!-- Les photos seront chargées ici par JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sylvain Blanchoud</h4>
+                <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
+                    <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sylvain Blanchoud Photography</p>
+        </div>
+    </footer>
+
+    <script src="galeries-loader.js"></script>
+    <script>
+        // Gestion de l'affichage des vues
+        function showGaleriesList() {
+            document.getElementById('galeries-list-view').style.display = 'block';
+            document.getElementById('galerie-detail-view').style.display = 'none';
+            window.location.hash = '';
+        }
+        
+        function showGalerieDetail(galerieName) {
+            document.getElementById('galeries-list-view').style.display = 'none';
+            document.getElementById('galerie-detail-view').style.display = 'block';
+            
+            // Mettre à jour le titre
+            const titleMap = {
+                'vaud': 'Vaud',
+                'italie': 'Italie',
+                'france': 'France',
+                'paris': 'Paris',
+                'naples': 'Naples',
+                'geneve': 'Genève',
+                'grisons': 'Grisons',
+                'neuchatel': 'Neuchâtel',
+                'bern': 'Bern'
+            };
+            
+            document.getElementById('current-gallery-title').textContent = titleMap[galerieName] || galerieName;
+        }
+        
+        // Gérer l'affichage selon le hash
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1);
+            
+            if (hash) {
+                showGalerieDetail(hash);
+            } else {
+                showGaleriesList();
+            }
+        }
+        
+        // Initialiser au chargement
+        window.addEventListener('load', handleHashChange);
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>
