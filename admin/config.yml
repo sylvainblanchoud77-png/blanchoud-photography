@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # GALERIES PHOTOS
+  - name: "galeries"
+    label: "Galeries Photos"
+    folder: "galeries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Galerie", name: "galerie", widget: "select", options: ["Vaud", "Italie", "France", "Paris", "Naples", "Genève", "Grisons", "Neuchâtel", "Bern"]}
+      - {label: "Titre de la photo", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Photo", name: "image", widget: "image"}
+      - {label: "Prix (CHF)", name: "price", widget: "number", required: false}
+      - {label: "Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "Date", name: "date", widget: "datetime"}
+
+  # ARTICLES DE BLOG
+  - name: "blog"
+    label: "Articles de Blog"
+    folder: "blog-posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["PHILOSOPHIE", "TECHNIQUE", "VOYAGE", "ÉTHIQUE", "MATÉRIEL", "PROJETS", "RÉFLEXION", "POST-PRODUCTION", "ESTHÉTIQUE"]}
+      - {label: "Temps de lecture (min)", name: "readtime", widget: "number", default: 15}
+      - {label: "Image principale", name: "featured_image", widget: "image"}
+      - {label: "Résumé", name: "excerpt", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # COLLECTION (ŒUVRES À VENDRE)
+  - name: "collection"
+    label: "Collection (Œuvres)"
+    folder: "collection-items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre de l'œuvre", name: "title", widget: "string"}
+      - {label: "Photo", name: "image", widget: "image"}
+      - {label: "Prix (CHF)", name: "price", widget: "number"}
+      - {label: "Édition", name: "edition", widget: "string", default: "3/3 disponibles"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Lieu", name: "location", widget: "string"}
+      - {label: "Année", name: "year", widget: "number"}
+      - {label: "Format", name: "format", widget: "string", default: "100 x 70 cm"}
+      - {label: "Papier", name: "paper", widget: "string", default: "Papier Hahnemühle Photo Rag"}
+      - {label: "Date d'ajout", name: "date", widget: "datetime"}
