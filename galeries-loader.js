@@ -1,9 +1,8 @@
 // GALERIES LOADER - Charge les photos depuis Netlify CMS
-// Ce script lit les fichiers .md dans /galeries/ et affiche les photos
+// Version corrigée pour la structure /galeries/{galerie}/*.md
 
-// Fonction pour parser le contenu des fichiers .md (format ligne par ligne)
+// Fonction pour parser le contenu des fichiers .md (format YAML)
 function parseFrontMatter(content) {
-  // D'abord essayer le format YAML standard avec ---
   const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---/;
   const match = content.match(frontMatterRegex);
   
@@ -32,41 +31,17 @@ function parseFrontMatter(content) {
     return frontMatter;
   }
   
-  // Sinon, parser le format ligne par ligne (sans ---)
-  const lines = content.trim().split('\n');
-  
-  if (lines.length < 7) return null; // Pas assez de lignes
-  
-  // Format attendu :
-  // Ligne 0: galerie
-  // Ligne 1: title
-  // Ligne 2: description
-  // Ligne 3: image
-  // Ligne 4: price
-  // Ligne 5: edition
-  // Ligne 6: format
-  // Ligne 7: date
-  
-  return {
-    galerie: lines[0] ? lines[0].trim() : '',
-    title: lines[1] ? lines[1].trim() : '',
-    description: lines[2] ? lines[2].trim() : '',
-    image: lines[3] ? lines[3].trim() : '',
-    price: lines[4] ? lines[4].trim() : '',
-    edition: lines[5] ? lines[5].trim() : '',
-    format: lines[6] ? lines[6].trim() : '',
-    date: lines[7] ? lines[7].trim() : ''
-  };
+  return null;
 }
 
 // Fonction pour charger toutes les photos d'une galerie
 async function loadGaleriePhotos(galerieName) {
   try {
-    // Récupérer la liste des fichiers depuis GitHub
-    const response = await fetch(`https://api.github.com/repos/sylvainblanchoud77-png/blanchoud-photography/contents/galeries`);
+    // Récupérer la liste des fichiers depuis GitHub dans le sous-dossier de la galerie
+    const response = await fetch(`https://api.github.com/repos/sylvainblanchoud77-png/blanchoud-photography/contents/galeries/${galerieName}`);
     
     if (!response.ok) {
-      console.error('Erreur lors du chargement des galeries');
+      console.error('Erreur lors du chargement de la galerie:', galerieName);
       return [];
     }
     
@@ -76,20 +51,25 @@ async function loadGaleriePhotos(galerieName) {
     // Charger chaque fichier .md
     for (const file of files) {
       if (file.name.endsWith('.md')) {
-        const contentResponse = await fetch(file.download_url);
-        const content = await contentResponse.text();
-        const data = parseFrontMatter(content);
-        
-        if (data && data.galerie && data.galerie.toLowerCase() === galerieName.toLowerCase()) {
-          photos.push({
-            title: data.title || 'Sans titre',
-            image: data.image || '',
-            description: data.description || '',
-            price: data.price || '',
-            edition: data.edition || '3/3 disponibles',
-            format: data.format || '100 x 70 cm',
-            date: data.date || ''
-          });
+        try {
+          const contentResponse = await fetch(file.download_url);
+          const content = await contentResponse.text();
+          const data = parseFrontMatter(content);
+          
+          if (data && data.image) {
+            photos.push({
+              title: data.title || 'Sans titre',
+              image: data.image || '',
+              description: data.description || '',
+              price: data.price || '',
+              edition: data.edition || '3/3 disponibles',
+              format: data.format || '100 x 70 cm',
+              date: data.date || '',
+              galerie: data.galerie || galerieName
+            });
+          }
+        } catch (error) {
+          console.error('Erreur lors du chargement du fichier:', file.name, error);
         }
       }
     }
@@ -259,3 +239,4 @@ if (document.readyState === 'loading') {
 
 // Réinitialiser quand le hash change
 window.addEventListener('hashchange', initGalerie);
+Fix galeries loader
