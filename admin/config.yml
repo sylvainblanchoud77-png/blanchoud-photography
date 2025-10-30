@@ -1,1 +1,216 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Configuration pour upload multiple et brouillons
+publish_mode: editorial_workflow
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Permet de sauvegarder des brouillons et publier plus tard
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # ========================================
+  # GALERIES PHOTOS - 9 GALERIES SÉPARÉES
+  # ========================================
+  
+  # GALERIE VAUD
+  - name: "galerie-vaud"
+    label: "📸 Vaud"
+    label_singular: "Photo Vaud"
+    folder: "galeries/vaud"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250, hint: "Par défaut 5250"}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Vaud"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE ITALIE
+  - name: "galerie-italie"
+    label: "📸 Italie"
+    label_singular: "Photo Italie"
+    folder: "galeries/italie"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Italie"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE FRANCE
+  - name: "galerie-france"
+    label: "📸 France"
+    label_singular: "Photo France"
+    folder: "galeries/france"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "France"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE PARIS
+  - name: "galerie-paris"
+    label: "📸 Paris"
+    label_singular: "Photo Paris"
+    folder: "galeries/paris"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Paris"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE NAPLES
+  - name: "galerie-naples"
+    label: "📸 Naples"
+    label_singular: "Photo Naples"
+    folder: "galeries/naples"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Naples"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE GENÈVE
+  - name: "galerie-geneve"
+    label: "📸 Genève"
+    label_singular: "Photo Genève"
+    folder: "galeries/geneve"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Genève"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE GRISONS
+  - name: "galerie-grisons"
+    label: "📸 Grisons"
+    label_singular: "Photo Grisons"
+    folder: "galeries/grisons"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Grisons"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE NEUCHÂTEL
+  - name: "galerie-neuchatel"
+    label: "📸 Neuchâtel"
+    label_singular: "Photo Neuchâtel"
+    folder: "galeries/neuchatel"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Neuchâtel"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # GALERIE BERN
+  - name: "galerie-bern"
+    label: "📸 Bern"
+    label_singular: "Photo Bern"
+    folder: "galeries/bern"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "📸 Photo", name: "image", widget: "image", hint: "OBLIGATOIRE - Votre image"}
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "Peut être rempli plus tard", required: false, default: "Sans titre"}
+      - {label: "✍️ Description", name: "description", widget: "text", required: false, hint: "Optionnel - À remplir plus tard"}
+      - {label: "💰 Prix (CHF)", name: "price", widget: "number", required: false, default: 5250}
+      - {label: "🏷️ Édition", name: "edition", widget: "string", default: "3/3 disponibles", required: false}
+      - {label: "📐 Format", name: "format", widget: "string", default: "100 x 70 cm", required: false}
+      - {label: "🎨 Galerie", name: "galerie", widget: "hidden", default: "Bern"}
+      - {label: "📅 Date", name: "date", widget: "datetime", default: ""}
+
+  # ARTICLES DE BLOG - CRÉATION RAPIDE
+  - name: "blog"
+    label: "✍️ Articles de Blog"
+    label_singular: "Article"
+    folder: "blog-posts"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{category}}"
+    fields:
+      - {label: "📝 Titre", name: "title", widget: "string", hint: "OBLIGATOIRE - Titre de votre article"}
+      - {label: "🎨 Catégorie", name: "category", widget: "select", options: ["PHILOSOPHIE", "TECHNIQUE", "VOYAGE", "ÉTHIQUE", "MATÉRIEL", "PROJETS", "RÉFLEXION", "POST-PRODUCTION", "ESTHÉTIQUE"], hint: "OBLIGATOIRE"}
+      - {label: "📸 Image principale", name: "featured_image", widget: "image", required: false, hint: "Optionnel - Peut être ajoutée plus tard"}
+      - {label: "✍️ Contenu", name: "body", widget: "markdown", hint: "Votre texte - Peut être complété plus tard", required: false, default: "Article en cours de rédaction..."}
+      - {label: "📅 Date de publication", name: "date", widget: "datetime", default: ""}
+      - {label: "📄 Résumé", name: "excerpt", widget: "text", required: false, hint: "Optionnel - Court résumé"}
+      - {label: "⏱️ Temps de lecture (min)", name: "readtime", widget: "number", default: 15, required: false}
+
+  # COLLECTION (ŒUVRES À VENDRE)
+  - name: "collection"
+    label: "Collection (Œuvres)"
+    folder: "collection-items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre de l'œuvre", name: "title", widget: "string"}
+      - {label: "Photo", name: "image", widget: "image"}
+      - {label: "Prix (CHF)", name: "price", widget: "number"}
+      - {label: "Édition", name: "edition", widget: "string", default: "3/3 disponibles"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Lieu", name: "location", widget: "string"}
+      - {label: "Année", name: "year", widget: "number"}
+      - {label: "Format", name: "format", widget: "string", default: "100 x 70 cm"}
+      - {label: "Papier", name: "paper", widget: "string", default: "Papier Hahnemühle Photo Rag"}
+      - {label: "Date d'ajout", name: "date", widget: "datetime"}
 
