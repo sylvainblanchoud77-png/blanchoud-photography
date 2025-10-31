@@ -3,94 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Blanchoud Photography</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/prima-style.css">
+    <title>Contact — Sylvain Blanchoud Photography</title>
+    <meta name="description" content="Contactez Sylvain Blanchoud pour toute question sur les tirages, commissions ou collaborations.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/blanchoud-photography/css/prima-style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">SYLVAIN BLANCHOUD</a>
+            <a class='logo' href='/blanchoud-photography/'>SYLVAIN BLANCHOUD</a>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="galeries.html">Galeries</a></li>
-                <li><a href="blog.html">Journal</a></li>
-                <li><a href="boutique.html">Boutique</a></li>
-                <li><a href="a-propos.html">À Propos</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href='/blanchoud-photography/'>Accueil</a></li>
+                <li><a href='/blanchoud-photography/collection.html'>Collection</a></li>
+                <li><a href='/blanchoud-photography/galeries.html'>Galeries</a></li>
+                <li><a href='/blanchoud-photography/blog.html'>Journal</a></li>
+                <li><a href='/blanchoud-photography/boutique.html'>Boutique</a></li>
+                <li><a href='/blanchoud-photography/a-propos.html'>À Propos</a></li>
+                <li><a class='active' href='/blanchoud-photography/contact.html'>Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <section class="section">
-            <h1 class="section-title">Contact</h1>
-            <div class="contact-container">
-                <p class="contact-intro">
-                    Pour toute question sur ma démarche photographique, ma collection, ou pour réserver une œuvre, 
-                    je serais ravi d'échanger avec vous. Merci de remplir le formulaire ci-dessous ou de me contacter 
-                    directement par téléphone ou email.
-                </p>
+    <!-- Header -->
+    <section style="padding: 6rem 2rem 4rem; text-align: center; background: #f8f8f8;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Contact</h1>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: #666;">
+                Une question ? Un projet ? N'hésitez pas à me contacter
+            </p>
+        </div>
+    </section>
 
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nom *</label>
-                        <input type="text" id="name" name="name" required>
+    <!-- Contenu principal -->
+    <section>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Formulaire -->
+                <div>
+                    <h2 style="margin-bottom: 2rem;">Envoyez-moi un message</h2>
+                    
+                    <form action="mailto:sylvainblanchoud@bluewin.ch" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <label for="nom" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nom *</label>
+                            <input type="text" id="nom" name="nom" required style="width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+
+                        <div>
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+
+                        <div>
+                            <label for="telephone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" style="width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+
+                        <div>
+                            <label for="sujet" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Sujet *</label>
+                            <select id="sujet" name="sujet" required style="width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; font-family: inherit; background: white;">
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="achat">Achat d'un tirage</option>
+                                <option value="devis">Demande de devis</option>
+                                <option value="commission">Commission / Projet spécifique</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="exposition">Exposition / Galerie</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
+                            <textarea id="message" name="message" rows="8" required style="width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="cta" style="border: none; cursor: pointer; width: fit-content;">Envoyer le message</button>
+                        
+                        <p style="font-size: 0.875rem; color: #999;">* Champs obligatoires</p>
+                    </form>
+                </div>
+
+                <!-- Informations de contact -->
+                <div>
+                    <h2 style="margin-bottom: 2rem;">Informations</h2>
+                    
+                    <div style="background: #f8f8f8; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1.5rem;">Coordonnées</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Adresse</div>
+                                <div style="color: #666;">
+                                    Abram-Louis Breguet 8<br>
+                                    2000 Neuchâtel<br>
+                                    Suisse
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Téléphone</div>
+                                <div style="color: #666;"><a href="tel:+41788085958" style="color: #666; text-decoration: none;">+41 78 808 59 58</a></div>
+                            </div>
+
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Email</div>
+                                <div style="color: #666;"><a href="mailto:sylvainblanchoud@bluewin.ch" style="color: #666; text-decoration: none;">sylvainblanchoud@bluewin.ch</a></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div style="background: #f8f8f8; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1.5rem;">Horaires</h4>
+                        <p style="color: #666; margin: 0;">
+                            Je réponds généralement sous <strong>24-48 heures</strong>.<br>
+                            Pour les demandes urgentes, privilégiez le téléphone.
+                        </p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Téléphone</label>
-                        <input type="tel" id="phone" name="phone">
+                    <div style="background: #f8f8f8; padding: 2rem; border-radius: 8px;">
+                        <h4 style="margin-bottom: 1.5rem;">Boutiques en ligne</h4>
+                        <p style="color: #666; margin-bottom: 1rem;">
+                            Mes œuvres sont également disponibles sur :
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <a href="https://art24.com" target="_blank" style="color: #2C2C2C; text-decoration: none; font-weight: 500;">→ Art24.com</a>
+                            <a href="https://iazzu.com" target="_blank" style="color: #2C2C2C; text-decoration: none; font-weight: 500;">→ Iazzu.com</a>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="subject">Sujet *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
+    <!-- FAQ -->
+    <section style="background: #f8f8f8;">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Questions fréquentes</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Quels sont les délais de livraison ?</h4>
+                    <p style="color: #666; margin: 0;">
+                        Suisse : 5-7 jours ouvrables. Europe : 10-14 jours ouvrables. 
+                        Chaque tirage est fait sur commande pour garantir la qualité optimale.
+                    </p>
+                </div>
 
-                    <button type="submit" class="btn">Envoyer le message</button>
-                </form>
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Puis-je commander un format personnalisé ?</h4>
+                    <p style="color: #666; margin: 0;">
+                        Oui, contactez-moi pour discuter de vos besoins spécifiques. 
+                        Je peux réaliser des tirages jusqu'à 150×225 cm.
+                    </p>
+                </div>
 
-                <div class="contact-info">
-                    <h3 style="margin-bottom: 20px;">Coordonnées Directes</h3>
-                    <p><strong>Téléphone :</strong> <a href="tel:+41788085958">+41 78 808 59 58</a></p>
-                    <p><strong>Email :</strong> <a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
-                    <p style="margin-top: 30px; color: #666;">
-                        Basé à Neuchâtel, Suisse<br>
-                        Disponible pour projets sur demande
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Les œuvres sont-elles encadrées ?</h4>
+                    <p style="color: #666; margin: 0;">
+                        Les tirages sont livrés non encadrés. Je peux cependant vous recommander 
+                        des encadreurs professionnels à Neuchâtel et en Suisse romande.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Acceptez-vous les commissions ?</h4>
+                    <p style="color: #666; margin: 0;">
+                        Oui, je suis ouvert aux projets de commissions pour des entreprises, 
+                        hôtels, galeries ou collectionneurs privés. Contactez-moi pour en discuter.
                     </p>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Sylvain Blanchoud</h4>
-                <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
-            </div>
-            <div class="footer-col">
+        <div class="footer-content">
+            <div class="footer-section">
                 <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
-                    <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
-                </ul>
+                <p>Sylvain Blanchoud</p>
+                <p>Abram-Louis Breguet 8<br>2000 Neuchâtel, Suisse</p>
+                <p>+41 78 808 59 58</p>
+                <p><a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href='/blanchoud-photography/'>Accueil</a>
+                <a href='/blanchoud-photography/galeries.html'>Galeries</a>
+                <a href='/blanchoud-photography/collection.html'>Collection</a>
+                <a href='/blanchoud-photography/a-propos.html'>À Propos</a>
+                <a href='/blanchoud-photography/contact.html'>Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Disponible sur</h4>
+                <a href="https://art24.com" target="_blank">Art24.com</a>
+                <a href="https://iazzu.com" target="_blank">Iazzu.com</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <p>Éditions limitées (3 ex.)</p>
+                <p>Tirages WhiteWall</p>
+                <p>Papier Hahnemühle</p>
+                <p>Certificat d'authenticité</p>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2025 Sylvain Blanchoud Photography</p>
+            <p>&copy; 2025 Sylvain Blanchoud Photography. Tous droits réservés.</p>
         </div>
     </footer>
 </body>
