@@ -1,4 +1,6 @@
-const NAME = 'blanchoud-v1';
+- const NAME = 'blanchoud-v1';
++ const NAME = 'blanchoud-v2';
+
 const ASSETS = [
   './',
   './index.html','./gallery.html','./blog.html','./post.html',
