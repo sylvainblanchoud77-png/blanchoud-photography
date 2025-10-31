@@ -130,8 +130,53 @@ function openLightbox(src, alt){
 
 // GitHub API helper
 // Liste récursive via Git Trees API
+// Liste récursive via Git Trees API + cache local 15 min
 async function listDir(path){
-  try{
+  const base = (path || '').replace(/^\/+|\/+$/g,'') + '/';
+  const isImage = p => /\.(jpe?g|png|webp|avif|gif|svg)$/i.test(p);
+  const isMarkdown = p => /\.md$/i.test(p);
+  const accept = base.startsWith('blog/') ? isMarkdown : isImage;
+
+  const KEY = 'tree:v2';           // <- incrémente si tu changes la logique
+  const TTL = 15 * 60 * 1000;      // 15 min
+  try {
+    const now = Date.now();
+    const cached = localStorage.getItem(KEY);
+    if (cached) {
+      const obj = JSON.parse(cached);
+      if (now - obj.time < TTL) {
+        return obj.tree
+          .filter(e => e.type==='blob' && e.path.startsWith(base) && accept(e.path))
+          .map(e => ({
+            name: e.path.split('/').pop(),
+            size: e.size,
+            path: e.path,
+            url: `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${e.path}`
+          }));
+      }
+    }
+
+    const api = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/git/trees/main?recursive=1`;
+    const res = await fetch(api);
+    if (!res.ok) throw new Error('Git Trees API error: ' + res.status);
+    const data = await res.json();
+    localStorage.setItem(KEY, JSON.stringify({ time: now, tree: data.tree || [] }));
+
+    return (data.tree || [])
+      .filter(e => e.type==='blob' && e.path.startsWith(base) && accept(e.path))
+      .map(e => ({
+        name: e.path.split('/').pop(),
+        size: e.size,
+        path: e.path,
+        url: `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${e.path}`
+      }));
+  } catch (e) {
+    console.error(e);
+    // état de repli : rien
+    return [];
+  }
+}
+
     const api = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/git/trees/main?recursive=1`;
     const res = await fetch(api);
     if (!res.ok) return [];
