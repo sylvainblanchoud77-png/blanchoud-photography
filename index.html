@@ -1,173 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blanchoud Photography | Photographie Fine Art Suisse</title>
-    <meta name="description" content="Sylvain Blanchoud - Photographe Fine Art basé à Neuchâtel. Éditions ultra-limitées à 3 exemplaires. Photographie contemplative et minimaliste.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/prima-style.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaud — Galerie | Blanchoud Photography</title>
+  <meta name="description" content="Série Vaud — tirages Fine Art en éditions ultra-limitées.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/prima-style.css">
+  <style>
+    .grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    figure{margin:0;position:relative;overflow:hidden}
+    img{width:100%;height:auto;display:block}
+    figcaption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);color:#fff;padding:8px 12px;font-size:14px}
+    .muted{opacity:.6}
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">SYLVAIN BLANCHOUD</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="blog.html">Journal</a></li>
-                <li><a href="boutique.html">Boutique</a></li>
-                <li><a href="a-propos.html">À Propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <h1>La Discipline du Silence</h1>
-        <p>Photographie Fine Art • Éditions ultra-limitées à 3 exemplaires</p>
-        <a href="collection.html" class="cta">Découvrir la Collection</a>
-    </section>
-
-    <div class="container">
-        <section class="section">
-            <h2 class="section-title">Une Approche Unique</h2>
-            <p class="section-subtitle">
-                Chaque œuvre est limitée à exactement trois exemplaires numérotés et signés. 
-                Cette rareté absolue reflète mon engagement envers l'excellence et la contemplation photographique.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Collection Principale</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Montagne islandaise">
-                    <div class="gallery-overlay">
-                        <h3>Silence Nordique</h3>
-                        <p>Islande • 2023 • CHF 4'500</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800" alt="Lac écossais">
-                    <div class="gallery-overlay">
-                        <h3>Loch Contemplation</h3>
-                        <p>Écosse • 2024 • CHF 5'000</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Paysage minimaliste">
-                    <div class="gallery-overlay">
-                        <h3>Horizon Minimal</h3>
-                        <p>Alpes • 2024 • CHF 4'800</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="collection.html" class="btn">Voir toute la collection</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Journal Photographique</h2>
-            <p class="section-subtitle">
-                Réflexions sur la photographie, le processus créatif et la discipline contemplative.
-            </p>
-            <div class="blog-grid">
-                <div class="blog-card" onclick="window.location.href='blog/article-20-manifeste.html'">
-                    <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800" alt="Manifeste">
-                    <div class="blog-content">
-                        <span class="blog-tag">PHILOSOPHIE</span>
-                        <h3 class="blog-title">Manifeste Photographique</h3>
-                        <p class="blog-meta">20 novembre 2024 • 18 min</p>
-                        <p class="blog-excerpt">
-                            La discipline du silence, l'édition ultra-limitée et l'art de la contemplation. 
-                            Mon engagement photographique résumé.
-                        </p>
-                    </div>
-                </div>
-                <div class="blog-card" onclick="window.location.href='blog/article-10-2025-horizons.html'">
-                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800" alt="2025">
-                    <div class="blog-content">
-                        <span class="blog-tag">PROJETS</span>
-                        <h3 class="blog-title">2025 : Nouveaux Horizons</h3>
-                        <p class="blog-meta">5 janvier 2025 • 17 min</p>
-                        <p class="blog-excerpt">
-                            Vision et projets pour l'année à venir. Les Lofoten, expansion de la collection, 
-                            et nouveaux territoires photographiques.
-                        </p>
-                    </div>
-                </div>
-                <div class="blog-card" onclick="window.location.href='blog/article-09-authenticite.html'">
-                    <img src="https://images.unsplash.com/photo-1495934385-c3dc0fac528c?w=800" alt="Authenticité">
-                    <div class="blog-content">
-                        <span class="blog-tag">ÉTHIQUE</span>
-                        <h3 class="blog-title">L'Authenticité en Photographie</h3>
-                        <p class="blog-meta">10 juin 2024 • 16 min</p>
-                        <p class="blog-excerpt">
-                            À l'ère de la manipulation digitale et de l'IA, qu'est-ce qu'une photographie 
-                            authentique aujourd'hui ?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-60">
-                <a href="blog.html" class="btn">Lire tous les articles</a>
-            </div>
-        </section>
+  <nav>
+    <div class="nav-container">
+      <a href="../../index.html" class="logo">SYLVAIN BLANCHOUD</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a href="../../collection.html">Collection</a></li>
+        <li><a href="../../galerie.html" class="active">Galerie</a></li>
+        <li><a href="../../blog.html">Journal</a></li>
+        <li><a href="../../boutique.html">Boutique</a></li>
+        <li><a href="../../a-propos.html">À Propos</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Sylvain Blanchoud</h4>
-                <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
-                <p style="margin-top: 20px;">Éditions ultra-limitées<br>3 exemplaires par œuvre</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="collection.html">Collection</a></li>
-                    <li><a href="galerie.html">Galerie</a></li>
-                    <li><a href="blog.html">Journal</a></li>
-                    <li><a href="boutique.html">Boutique</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
-                    <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
-                    <li><a href="contact.html">Formulaire de contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Informations</h4>
-                <ul>
-                    <li><a href="a-propos.html">À Propos</a></li>
-                    <li>CHF 4'000 - 7'000</li>
-                    <li>Papier Hahnemühle</li>
-                    <li>Certificat d'authenticité</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Sylvain Blanchoud Photography • Tous droits réservés</p>
-        </div>
-    </footer>
+  <header class="hero" style="text-align:center;padding:60px 20px;">
+    <h1>Vaud</h1>
+    <p class="muted">Placez vos photos **dans CE dossier** (le même que cette page). Indiquez leurs noms dans <code>images.txt</code>, un nom par ligne.</p>
+    <p><a class="btn" href="../../galerie.html">← Retour à la Galerie</a></p>
+  </header>
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
+  <main class="container">
+    <section class="section">
+      <div id="grid" class="grid"></div>
+      <p id="hint" class="muted" style="margin-top:16px"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Sylvain Blanchoud</h4>
+        <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../../collection.html">Collection</a></li>
+          <li><a href="../../galerie.html">Galerie</a></li>
+          <li><a href="../../blog.html">Journal</a></li>
+          <li><a href="../../boutique.html">Boutique</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
+          <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
+          <li><a href="../../contact.html">Formulaire de contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="../../a-propos.html">À Propos</a></li>
+          <li>CHF 4'000 - 7'000</li>
+          <li>Papier Hahnemühle</li>
+          <li>Certificat d'authenticité</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sylvain Blanchoud Photography • Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+  // Charge 'images.txt' dans le même dossier, et rend la grille.
+  // Format: un nom de fichier d'image par ligne (JPG/PNG/WebP), sans guillemets.
+  fetch('images.txt', {cache:'no-cache'})
+    .then(r => r.ok ? r.text() : '')
+    .then(txt => {
+      const lines = txt.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+      const grid = document.getElementById('grid');
+      const hint = document.getElementById('hint');
+      if (!lines.length) {
+        hint.innerHTML = "Ajoutez vos images dans ce dossier et listez-les dans <code>images.txt</code> (un nom par ligne). Exemple :<br> vaud-01.jpg\nvaud-02.jpg\nvaud-03.jpg";
+        return;
       }
-    </script>
+      for (const name of lines) {
+        const fig = document.createElement('figure');
+        fig.className = 'gallery-item';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = name; // ← image LOCALE dans le même dossier
+        img.alt = "Vaud — " + name;
+        const cap = document.createElement('figcaption');
+        cap.className = 'gallery-overlay';
+        cap.innerHTML = `<h3>Vaud</h3><p>${name}</p>`;
+        fig.appendChild(img);
+        fig.appendChild(cap);
+        grid.appendChild(fig);
+      }
+      hint.textContent = lines.length + " image(s) listée(s) dans images.txt";
+    })
+    .catch(_ => document.getElementById('hint').textContent = "Impossible de lire images.txt (assurez-vous qu'il existe).");
+  </script>
 </body>
 </html>
