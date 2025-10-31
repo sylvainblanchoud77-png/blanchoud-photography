@@ -27,3 +27,10 @@
   <script src="app.js" type="module" defer></script>
 </body>
 </html>
+if (!list) return;
+const posts = (await listDir(cfg.blogDir)).filter(f => /\.md$/i.test(f.name));
+if (!posts.length) {
+  list.innerHTML = `<div class="post-card"><h3>Aucun billet pour le moment</h3>
+  <div class="meta">Ajoute des fichiers <code>.md</code> dans <code>/blog</code> ou vide le cache.</div></div>`;
+  return;
+}
