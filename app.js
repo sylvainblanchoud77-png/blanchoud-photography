@@ -1,4 +1,5 @@
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
 const cfg = window.__CONFIG__ || {
   owner: "sylvainblanchoud77-png",
   repo: "blanchoud-photography",
