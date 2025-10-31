@@ -1,49 +1,179 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Galerie — Blanchoud Photography</title>
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="theme-color" content="#111">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeries — Sylvain Blanchoud Photography</title>
+    <meta name="description" content="Découvrez toutes les galeries photographiques de Sylvain Blanchoud : Suisse, France, Italie, paysages urbains et naturels.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/blanchoud-photography/css/prima-style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Principale">
-      <a class="brand" href="index.html">Blanchoud Photography</a>
-      <div class="spacer" role="presentation"></div>
-      <a class="link" aria-current="page" href="gallery.html">Galerie</a>
-      <a class="link" href="blog.html">Journal</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">◐</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a class='logo' href='/blanchoud-photography/'>SYLVAIN BLANCHOUD</a>
+            <ul class="nav-links">
+                <li><a href='/blanchoud-photography/'>Accueil</a></li>
+                <li><a href='/blanchoud-photography/collection.html'>Collection</a></li>
+                <li><a class='active' href='/blanchoud-photography/galeries.html'>Galeries</a></li>
+                <li><a href='/blanchoud-photography/blog.html'>Journal</a></li>
+                <li><a href='/blanchoud-photography/boutique.html'>Boutique</a></li>
+                <li><a href='/blanchoud-photography/a-propos.html'>À Propos</a></li>
+                <li><a href='/blanchoud-photography/contact.html'>Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main id="main" class="gallery">
-    <h1 class="page-title">Galerie</h1>
-    <div id="filters" class="filters" role="toolbar" aria-label="Filtres">
-      <input id="search" class="input" type="search" placeholder="Rechercher (nom de fichier, tag)">
-      <select id="sort" class="select" aria-label="Trier">
-        <option value="name">Nom</option>
-        <option value="date">Date</option>
-        <option value="size">Taille</option>
-      </select>
-      <button id="shuffle" class="btn ghost">Mélanger</button>
-    </div>
-    <div id="grid" class="masonry" aria-live="polite"></div>
+    <!-- Header -->
+    <section style="padding: 6rem 2rem 4rem; text-align: center; background: #f8f8f8;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Galeries</h1>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: #666;">
+                Explorez mes séries photographiques à travers la Suisse, la France et l'Italie
+            </p>
+        </div>
+    </section>
 
-    <dialog id="lightbox" aria-label="Visionneuse">
-      <button id="closeLightbox" aria-label="Fermer" class="close">×</button>
-      <img id="lightboxImg" alt="" />
-      <p id="lightboxCaption" class="caption"></p>
-    </dialog>
-  </main>
+    <!-- Galeries Grid -->
+    <section>
+        <div class="container">
+            <div class="gallery-grid">
+                
+                <!-- Galerie France -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-france-phares.jpg" alt="France - Phares">
+                    <div class="gallery-overlay">
+                        <h3>France</h3>
+                        <p>Phares et côtes bretonnes • Gardiens de la mer</p>
+                    </div>
+                </div>
 
-  <footer class="site-footer small">
-    <span class="muted">Images chargées depuis GitHub · Lazy loading.</span>
-  </footer>
+                <!-- Galerie Italie -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-italie-pise.jpg" alt="Italie - Pise">
+                    <div class="gallery-overlay">
+                        <h3>Italie</h3>
+                        <p>Pise et Toscane • Architecture et patrimoine</p>
+                    </div>
+                </div>
 
-  <script src="https://unpkg.com/marked/marked.min.js" defer></script>
-  <script src="app.js" type="module" defer></script>
+                <!-- Galerie Naples -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-naples-ruelle.jpg" alt="Naples - Ruelles">
+                    <div class="gallery-overlay">
+                        <h3>Naples</h3>
+                        <p>Vie de quartier • Ruelles et marché napolitains</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Paris -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-paris-passage.jpg" alt="Paris - Passages">
+                    <div class="gallery-overlay">
+                        <h3>Paris</h3>
+                        <p>Lumières nocturnes • Passages et atmosphères parisiennes</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Neuchâtel -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-neuchatel-lac.jpg" alt="Neuchâtel - Lac">
+                    <div class="gallery-overlay">
+                        <h3>Neuchâtel</h3>
+                        <p>Sérénité lacustre • Quais et promenades du lac</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Grisons -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-grisons-montagne.jpg" alt="Grisons - Montagne">
+                    <div class="gallery-overlay">
+                        <h3>Grisons</h3>
+                        <p>Haute montagne • Lacs alpins et sommets préservés</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Genève -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-geneve-cafe.jpg" alt="Genève - Cafés">
+                    <div class="gallery-overlay">
+                        <h3>Genève</h3>
+                        <p>Urbanité suisse • Cafés et places genevoises</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Valais -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-valais-cervin.jpg" alt="Valais - Cervin">
+                    <div class="gallery-overlay">
+                        <h3>Valais</h3>
+                        <p>Majesté alpine • Le Cervin et les sommets valaisans</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Bern -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-bern-place.jpg" alt="Bern - Places">
+                    <div class="gallery-overlay">
+                        <h3>Bern</h3>
+                        <p>Capitale fédérale • Places et architecture bernoise</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: #f8f8f8; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 1.5rem;">Intéressé par un tirage ?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; color: #666;">
+                Toutes les œuvres sont disponibles en éditions ultra-limitées (3 exemplaires)
+            </p>
+            <a class='cta' href='/blanchoud-photography/collection.html'>Voir la collection</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Sylvain Blanchoud</p>
+                <p>Abram-Louis Breguet 8<br>2000 Neuchâtel, Suisse</p>
+                <p>+41 78 808 59 58</p>
+                <p><a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href='/blanchoud-photography/'>Accueil</a>
+                <a href='/blanchoud-photography/galeries.html'>Galeries</a>
+                <a href='/blanchoud-photography/collection.html'>Collection</a>
+                <a href='/blanchoud-photography/a-propos.html'>À Propos</a>
+                <a href='/blanchoud-photography/contact.html'>Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Disponible sur</h4>
+                <a href="https://art24.com" target="_blank">Art24.com</a>
+                <a href="https://iazzu.com" target="_blank">Iazzu.com</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <p>Éditions limitées (3 ex.)</p>
+                <p>Tirages WhiteWall</p>
+                <p>Papier Hahnemühle</p>
+                <p>Certificat d'authenticité</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sylvain Blanchoud Photography. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
