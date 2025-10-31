@@ -1,33 +1,18 @@
-# Pack de correctifs — Blanchoud Photography (GitHub Pages)
+# Blanchoud Photography — Starter Astro
 
-Ce pack contient :
-- `galeries.html` (alias de redirection vers `galerie.html`)
-- Pages légales : `mentions-legales.html`, `confidentialite.html`, `cgv.html`
-- Dossiers de galeries avec `index.html` : `galeries/valais/`, `galeries/paris/`, `galeries/neuchatel/`
-- Script `fix_links.sh` pour corriger tous les href `galeries.html` → `galerie.html`
-
-## Installation rapide
-
-1. Décompressez le pack à la **racine du dépôt** `blanchoud-photography`.
-2. Optionnel : lancez le script de correction des liens :
-
+## Installation
 ```bash
-chmod +x fix_links.sh
-./fix_links.sh
+npm i
+npm run dev
 ```
 
-3. Ajoutez, validez et poussez :
+## Important
+- Remplacez `public/css/prima.css` par **votre fichier CSS original** (prima.css).
+- Copiez vos images dans `public/images/` (ou gardez votre structure et ajustez les chemins).
+- Exécutez `npm run lint:paths` et `npm run lint:links` pour éviter 404 et problèmes de casse.
 
-```bash
-git add .
-git commit -m "Fix liens galerie + pages légales + alias redirection"
-git push
-```
+## Déploiement GitHub Pages
+- Poussez sur `main`. Le workflow `.github/workflows/deploy.yml` publie automatiquement.
 
-4. Testez l’URL publique :
-`https://sylvainblanchoud77-png.github.io/blanchoud-photography/`
-
-## Notes
-- Si vous utilisez des liens absolus (`/blanchoud-photography/...`), vous pouvez les garder.
-- Pour des URLs propres (`/galeries/valais/`), éditez les fichiers et ajoutez vos œuvres.
-- Si des liens externes pointent déjà vers `/galeries.html`, gardez l’alias `galeries.html` (inclus dans ce pack).
+## Qualité
+- Pa11y (a11y) et Lighthouse (perf/SEO) sont configurés (workflow `quality.yml` sur PR).

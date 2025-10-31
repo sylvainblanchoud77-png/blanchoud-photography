@@ -1,0 +1,4 @@
+{
+  "defaults": { "standard": "WCAG2AA" },
+  "urls": ["http://localhost:4321/", "http://localhost:4321/galeries/", "http://localhost:4321/a-propos/"]
+}
