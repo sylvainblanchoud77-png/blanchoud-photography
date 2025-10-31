@@ -93,7 +93,28 @@ function openLightbox(src, alt){
     a.innerHTML = `<h3>${titleFromName(p.name)}</h3><div class="meta">${fmtSize(p.size)}</div>`;
     list.appendChild(a);
   }
+})();(async function buildBlog(){
+  const list = document.getElementById('posts'); if(!list) return;
+  const posts = (await listDir(cfg.blogDir)).filter(f => /\.md$/i.test(f.name));
+  posts.sort((a,b)=> a.name.localeCompare(b.name,'fr'));
+
+  if (!posts.length) {
+    list.innerHTML = `
+      <div class="post-card">
+        <h3>Aucun billet pour le moment</h3>
+        <div class="meta">Ajoute des fichiers .md dans /blog de ton dépôt</div>
+      </div>`;
+    return;
+  }
+
+  for (const p of posts) {
+    const a = document.createElement('a'); a.className='post-card';
+    a.href = 'post.html?path=' + encodeURIComponent(p.path);
+    a.innerHTML = `<h3>${titleFromName(p.name)}</h3><div class="meta">${p.size? (Math.round(p.size/1024))+' Ko':''}</div>`;
+    list.appendChild(a);
+  }
 })();
+
 
 // Single post
 (async function renderPost(){
