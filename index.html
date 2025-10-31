@@ -1,83 +1,151 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blanchoud Photography — Lumières, matières et fragments de réel</title>
-  <meta name="description" content="Portfolio photo de Sylvain Blanchoud. Lumières, matières et fragments de réel." />
-  <meta property="og:title" content="Blanchoud Photography" />
-  <meta property="og:description" content="Lumières, matières et fragments de réel" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://<votre-utilisateur>.github.io/<votre-repo>/" />
-  <meta property="og:image" content="images/cover.jpg" />
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="theme-color" content="#e6e6e6">
-  <script>window.__CONFIG__ = {
-    owner: "sylvainblanchoud77-png",
-    repo: "blanchoud-photography",
-    imagesDir: "images",
-    blogDir: "blog",
-    siteTitle: "Blanchoud Photography"
-  };</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylvain Blanchoud — Photographe Fine Art | Neuchâtel, Suisse</title>
+    <meta name="description" content="Sylvain Blanchoud, photographe fine-art basé à Neuchâtel. Éditions ultra-limitées (3 exemplaires), tirages WhiteWall sur papier Hahnemühle. Leica Q2.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/blanchoud-photography/css/prima-style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Principale">
-      <a class="brand" href="index.html" aria-current="page">Blanchoud Photography</a>
-      <div class="spacer" role="presentation"></div>
-      <a class="link" href="gallery.html">Galerie</a>
-      <a class="link" href="blog.html">Journal</a>
-      <a class="link" href="#contact">Contact</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">◐</button>
-    </nav>
-  </header>
-
-  <main id="main" class="home">
-    <section class="hero" aria-label="Héro">
-      <div class="hero-inner">
-        <h1 class="headline">Blanchoud Photography</h1>
-        <p class="tagline">Lumières, matières et fragments de réel</p>
-        <div class="cta-row">
-          <a class="btn primary" href="gallery.html">Voir la galerie</a>
-          <a class="btn ghost" href="blog.html">Lire le journal</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a class='logo' href='/blanchoud-photography/'>SYLVAIN BLANCHOUD</a>
+            <ul class="nav-links">
+                <li><a class='active' href='/blanchoud-photography/'>Accueil</a></li>
+                <li><a href='/blanchoud-photography/collection.html'>Collection</a></li>
+                <li><a href='/blanchoud-photography/galeries.html'>Galeries</a></li>
+                <li><a href='/blanchoud-photography/blog.html'>Journal</a></li>
+                <li><a href='/blanchoud-photography/boutique.html'>Boutique</a></li>
+                <li><a href='/blanchoud-photography/a-propos.html'>À Propos</a></li>
+                <li><a href='/blanchoud-photography/contact.html'>Contact</a></li>
+            </ul>
         </div>
-      </div>
-      <div class="hero-marquee" aria-hidden="true"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/blanchoud-photography/images/galerie-valais-cervin.jpg');">
+        <div style="max-width: 800px; padding: 0 20px;">
+            <h1>Révéler la poésie secrète<br>des paysages suisses</h1>
+            <p>
+                Photographie contemplative en éditions ultra-limitées<br>
+                Tirages fine-art sur papier Hahnemühle • WhiteWall
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a class='cta' href='/blanchoud-photography/galeries.html'>Découvrir les galeries</a>
+                <a class='btn' href='/blanchoud-photography/collection.html'>Collection Fine Art</a>
+            </div>
+        </div>
     </section>
 
-    <section class="about" aria-label="À propos">
-      <div class="prose">
-        <h2>Photographie sensible</h2>
-        <p>Entre matière et silence, mes images cherchent le point de bascule où un détail devient paysage. Série, errance, journal — la photographie comme respiration.</p>
-      </div>
+    <!-- Galeries en vedette -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeries en vedette</h2>
+                <p>Une sélection de mes séries photographiques les plus emblématiques</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Galerie Valais -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-valais-cervin.jpg" alt="Valais - Cervin">
+                    <div class="gallery-overlay">
+                        <h3>Valais</h3>
+                        <p>Majesté alpine • Le Cervin et les sommets valaisans</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Paris -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-paris-passage.jpg" alt="Paris - Passages">
+                    <div class="gallery-overlay">
+                        <h3>Paris</h3>
+                        <p>Lumières nocturnes • Passages et ruelles parisiennes</p>
+                    </div>
+                </div>
+
+                <!-- Galerie Neuchâtel -->
+                <div class="gallery-card">
+                    <img src="/blanchoud-photography/images/galerie-neuchatel-lac.jpg" alt="Neuchâtel - Lac">
+                    <div class="gallery-overlay">
+                        <h3>Neuchâtel</h3>
+                        <p>Sérénité lacustre • Quais et rives du lac</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a class='cta' href='/blanchoud-photography/galeries.html'>Voir toutes les galeries</a>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer" id="contact">
-    <div class="footer-grid">
-      <div>
-        <h3>Contact</h3>
-        <p>
-          <a href="mailto:contact@sylvainblanchoud.ch" class="link">contact@sylvainblanchoud.ch</a><br>
-          <span class="muted">Basé en Suisse · Disponible sur commande</span>
-        </p>
-      </div>
-      <div>
-        <h3>Réseaux</h3>
-        <p><a target="_blank" rel="noopener" class="link" href="https://github.com/sylvainblanchoud77-png">GitHub</a></p>
-      </div>
-      <div>
-        <h3>Crédits</h3>
-        <p>Site statique propulsé par GitHub Pages. Code libre.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- Démarche artistique -->
+    <section style="background: #f8f8f8;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Démarche artistique</h2>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Ma photographie explore la <strong>contemplation silencieuse</strong> des paysages suisses et européens. 
+                    Chaque image est une invitation à <strong>ralentir</strong>, à observer les <strong>jeux de lumière</strong> 
+                    et les <strong>textures du temps</strong> qui sculptent nos environnements.
+                </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-top: 1.5rem;">
+                    Armé de mon <strong>Leica Q2</strong>, je capture des <strong>éditions ultra-limitées</strong> 
+                    (3 exemplaires maximum) imprimées sur <strong>papier Hahnemühle</strong> par <strong>WhiteWall</strong>, 
+                    garantissant une qualité muséale à chaque tirage.
+                </p>
+                <div style="margin-top: 2.5rem;">
+                    <a class='cta' href='/blanchoud-photography/a-propos.html'>En savoir plus sur mon parcours</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="app.js" type="module" defer></script>
-
-  <script src="app.js" type="module" defer></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Sylvain Blanchoud</p>
+                <p>Abram-Louis Breguet 8<br>2000 Neuchâtel, Suisse</p>
+                <p>+41 78 808 59 58</p>
+                <p><a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href='/blanchoud-photography/'>Accueil</a>
+                <a href='/blanchoud-photography/galeries.html'>Galeries</a>
+                <a href='/blanchoud-photography/collection.html'>Collection</a>
+                <a href='/blanchoud-photography/a-propos.html'>À Propos</a>
+                <a href='/blanchoud-photography/contact.html'>Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Disponible sur</h4>
+                <a href="https://art24.com" target="_blank">Art24.com</a>
+                <a href="https://iazzu.com" target="_blank">Iazzu.com</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <p>Éditions limitées (3 ex.)</p>
+                <p>Tirages WhiteWall</p>
+                <p>Papier Hahnemühle</p>
+                <p>Certificat d'authenticité</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sylvain Blanchoud Photography. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
