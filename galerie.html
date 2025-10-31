@@ -101,3 +101,10 @@
   </footer>
 </body>
 </html>
+if (!grid) return;
+let items = await listDir(cfg.imagesDir);
+if (!items.length) {
+  grid.innerHTML = `<div class="post-card"><h3>Aucune image trouvée</h3>
+  <div class="meta">Vérifie le dossier <code>/images</code> (extensions jpeg/png/webp/avif) ou vide le cache (Ctrl/⌘+Shift+R).</div></div>`;
+  return;
+}
