@@ -106,13 +106,28 @@ function openLightbox(src, alt){
 })();
 
 // GitHub API helper
+// Liste récursive via Git Trees API
 async function listDir(path){
   try{
-    const res = await fetch(GH + encodeURIComponent(path));
+    const api = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/git/trees/main?recursive=1`;
+    const res = await fetch(api);
     if (!res.ok) return [];
-    const data = await res.json();
-    return data.filter(x=>x.type==='file').map(x => ({
-      name: x.name, size: x.size, path: x.path, url: x.download_url
-    }));
-  }catch(e){ console.error(e); return []; }
+    const { tree = [] } = await res.json();
+    const norm = p => p.replace(/^\/+|\/+$/g,'') + '/';
+    const base = norm(path);
+    const isImage = p => /\.(jpe?g|png|webp|avif|gif|svg)$/i.test(p);
+    const isMarkdown = p => /\.md$/i.test(p);
+
+    // déduis le type selon le dossier ciblé
+    const accept = path.startsWith('blog') ? isMarkdown : isImage;
+
+    return tree
+      .filter(e => e.type === 'blob' && e.path.startsWith(base) && accept(e.path))
+      .map(e => ({
+        name: e.path.split('/').pop(),
+        size: e.size,
+        path: e.path,
+        url: `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${e.path}`
+      }));
+  } catch(e){ console.error(e); return []; }
 }
