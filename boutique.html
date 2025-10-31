@@ -3,688 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique - Tarifs & Commandes | Blanchoud Photography</title>
-    <meta name="description" content="Éditions ultra-limitées 3/3. Photographie Fine Art sur papier Hahnemühle. CHF 5'250-7'000. Cadres museum optionnels.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/prima-style.css">
-    <style>
-        .pricing-section {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 40px;
-        }
-        
-        .pricing-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .pricing-table {
-            background: white;
-            border: 1px solid #e8e6e0;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-        
-        .pricing-table-header {
-            background: #f8f6f0;
-            padding: 30px;
-            border-bottom: 1px solid #e8e6e0;
-        }
-        
-        .pricing-table-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-        
-        .pricing-table-header p {
-            color: #8b7355;
-            margin: 0;
-        }
-        
-        .pricing-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 25px 30px;
-            border-bottom: 1px solid #e8e6e0;
-            align-items: center;
-        }
-        
-        .pricing-row:last-child {
-            border-bottom: none;
-        }
-        
-        .pricing-row-label {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-        
-        .pricing-row-price {
-            text-align: right;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #8b7355;
-        }
-        
-        .pricing-note {
-            background: #f8f6f0;
-            padding: 20px 30px;
-            font-size: 0.95rem;
-            color: #666;
-            font-style: italic;
-        }
-        
-        .paper-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .paper-card {
-            background: white;
-            border: 1px solid #e8e6e0;
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .paper-card:hover {
-            border-color: #8b7355;
-            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.1);
-        }
-        
-        .paper-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-        
-        .paper-badge {
-            display: inline-block;
-            background: #8b7355;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-        
-        .paper-specs {
-            margin: 15px 0;
-            padding: 15px 0;
-            border-top: 1px solid #e8e6e0;
-            border-bottom: 1px solid #e8e6e0;
-        }
-        
-        .paper-spec {
-            display: flex;
-            justify-content: space-between;
-            margin: 8px 0;
-            font-size: 0.95rem;
-        }
-        
-        .paper-spec-label {
-            color: #666;
-        }
-        
-        .paper-spec-value {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-        
-        .paper-description {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .frame-section {
-            background: #f8f6f0;
-            padding: 60px 40px;
-            margin: 60px 0;
-        }
-        
-        .frame-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .frame-info h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .frame-features {
-            margin: 30px 0;
-        }
-        
-        .frame-feature {
-            display: flex;
-            align-items: flex-start;
-            margin: 15px 0;
-        }
-        
-        .frame-feature-icon {
-            color: #8b7355;
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-        
-        .frame-pricing-box {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #e8e6e0;
-        }
-        
-        .frame-pricing-box h4 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .frame-price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #e8e6e0;
-        }
-        
-        .frame-price-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .delivery-section {
-            max-width: 800px;
-            margin: 0 auto 80px;
-        }
-        
-        .delivery-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .delivery-card {
-            background: white;
-            border: 2px solid #e8e6e0;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .delivery-flag {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .delivery-region {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .delivery-price {
-            font-size: 2rem;
-            color: #8b7355;
-            font-weight: 700;
-            margin: 20px 0;
-        }
-        
-        .delivery-details {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .cta-section {
-            text-align: center;
-            background: #8b7355;
-            color: white;
-            padding: 60px 40px;
-            margin: 60px 0;
-        }
-        
-        .cta-section h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .btn-white {
-            background: white;
-            color: #8b7355;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-white:hover {
-            background: #f8f6f0;
-            transform: translateY(-2px);
-        }
-        
-        @media (max-width: 768px) {
-            .pricing-row {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            
-            .pricing-row-price {
-                text-align: left;
-            }
-            
-            .frame-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .delivery-options {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Boutique — Sylvain Blanchoud Photography</title>
+    <meta name="description" content="Achetez des tirages fine-art en éditions limitées. Disponible sur Art24.com et Iazzu.com.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/blanchoud-photography/css/prima-style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">SYLVAIN BLANCHOUD</a>
+            <a class='logo' href='/blanchoud-photography/'>SYLVAIN BLANCHOUD</a>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="galeries.html">Galeries</a></li>
-                <li><a href="blog.html">Journal</a></li>
-                <li><a href="boutique.html" class="active">Boutique</a></li>
-                <li><a href="a-propos.html">À Propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href='/blanchoud-photography/'>Accueil</a></li>
+                <li><a href='/blanchoud-photography/collection.html'>Collection</a></li>
+                <li><a href='/blanchoud-photography/galeries.html'>Galeries</a></li>
+                <li><a href='/blanchoud-photography/blog.html'>Journal</a></li>
+                <li><a class='active' href='/blanchoud-photography/boutique.html'>Boutique</a></li>
+                <li><a href='/blanchoud-photography/a-propos.html'>À Propos</a></li>
+                <li><a href='/blanchoud-photography/contact.html'>Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <!-- En-tête -->
-        <section class="section">
-            <h1 class="section-title">Boutique</h1>
-            <p class="section-subtitle">
-                Éditions ultra-limitées 3/3 • Photographie Fine Art • Papiers Hahnemühle Museum
-            </p>
-        </section>
-
-        <!-- Introduction -->
-        <div class="pricing-intro">
-            <p>
-                Chaque photographie est disponible en édition strictement limitée à 3 exemplaires numérotés et signés.
-                Une fois les 3 tirages vendus, l'œuvre n'est plus jamais reproduite. Vous choisissez le format, le papier
-                Hahnemühle et l'encadrement museum optionnel.
+    <!-- Header -->
+    <section style="padding: 6rem 2rem 4rem; text-align: center; background: #f8f8f8;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Boutique</h1>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: #666;">
+                Tirages fine-art disponibles en ligne
             </p>
         </div>
+    </section>
 
-        <!-- Tarifs Tirages Seuls -->
-        <div class="pricing-section">
-            <div class="pricing-table">
-                <div class="pricing-table-header">
-                    <h3>📸 Tirages Fine Art Seuls</h3>
-                    <p>Tirage professionnel sur papier Hahnemühle + Livraison Suisse assurée incluse</p>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 100 x 70 cm</div>
-                    <div class="pricing-row-price">CHF 5'250</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 105 x 70 cm</div>
-                    <div class="pricing-row-price">CHF 5'380</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 120 x 80 cm</div>
-                    <div class="pricing-row-price">CHF 5'420</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 150 x 100 cm</div>
-                    <div class="pricing-row-price">CHF 5'530</div>
-                </div>
-                <div class="pricing-note">
-                    ✓ Impression laboratoire WhiteWall • ✓ Papier Hahnemühle au choix • ✓ Signé & numéroté • 
-                    ✓ Certificat d'authenticité • ✓ Livraison Suisse assurée DHL Express
-                </div>
-            </div>
-        </div>
-
-        <!-- Tarifs Tirages Encadrés -->
-        <div class="pricing-section">
-            <div class="pricing-table">
-                <div class="pricing-table-header">
-                    <h3>🖼️ Tirages Encadrés Museum</h3>
-                    <p>Tirage + Cadre Besau-Marguerre Design Edition + Livraison Suisse incluse</p>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 100 x 70 cm encadré</div>
-                    <div class="pricing-row-price">CHF 6'150</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 105 x 70 cm encadré</div>
-                    <div class="pricing-row-price">CHF 6'200</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 120 x 80 cm encadré</div>
-                    <div class="pricing-row-price">CHF 6'400</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 140 x 100 cm encadré</div>
-                    <div class="pricing-row-price">CHF 6'900</div>
-                </div>
-                <div class="pricing-row">
-                    <div class="pricing-row-label">Format 150 x 100 cm encadré</div>
-                    <div class="pricing-row-price">CHF 7'000</div>
-                </div>
-                <div class="pricing-note">
-                    ✓ Tout ci-dessus • ✓ Cadre museum Besau-Marguerre • ✓ Prêt à accrocher • 
-                    ✓ Protection verre • ✓ Emballage professionnel renforcé
-                </div>
-            </div>
-        </div>
-
-        <!-- Choix des Papiers -->
-        <section class="pricing-section">
-            <h2 class="section-title" style="font-size: 2rem; text-align: center; margin-bottom: 50px;">
-                Choix du Papier Hahnemühle
-            </h2>
+    <!-- Contenu principal -->
+    <section>
+        <div class="container" style="max-width: 1000px;">
             
-            <div class="paper-options">
-                <!-- FineArt Pearl -->
-                <div class="paper-card">
-                    <h4>FineArt Pearl</h4>
-                    <span class="paper-badge">ACCESSIBLE</span>
-                    <div class="paper-specs">
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Texture</span>
-                            <span class="paper-spec-value">Perlée brillante</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Grammage</span>
-                            <span class="paper-spec-value">285 g/m²</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Rendu</span>
-                            <span class="paper-spec-value">Éclat subtil</span>
-                        </div>
-                    </div>
-                    <p class="paper-description">
-                        Surface légèrement perlée qui donne de l'éclat aux couleurs. Idéal pour les paysages 
-                        avec eau, ciels colorés et scènes lumineuses.
-                    </p>
-                </div>
-
-                <!-- Photo Rag -->
-                <div class="paper-card">
-                    <h4>Photo Rag</h4>
-                    <span class="paper-badge">MUSÉE</span>
-                    <div class="paper-specs">
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Texture</span>
-                            <span class="paper-spec-value">Mat velouté</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Grammage</span>
-                            <span class="paper-spec-value">308 g/m²</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Rendu</span>
-                            <span class="paper-spec-value">Qualité musée</span>
-                        </div>
-                    </div>
-                    <p class="paper-description">
-                        Référence des galeries et musées. Mat velouté ultra-lisse. Le papier le plus épais de 
-                        la gamme. Profondeur et détails exceptionnels.
-                    </p>
-                </div>
-
-                <!-- William Turner -->
-                <div class="paper-card">
-                    <h4>William Turner</h4>
-                    <span class="paper-badge">ARTISTIQUE</span>
-                    <div class="paper-specs">
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Texture</span>
-                            <span class="paper-spec-value">Grain aquarelle</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Grammage</span>
-                            <span class="paper-spec-value">190 g/m²</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Rendu</span>
-                            <span class="paper-spec-value">Pictural</span>
-                        </div>
-                    </div>
-                    <p class="paper-description">
-                        Grain marqué type aquarelle pour un rendu artistique et traditionnel. Parfait pour 
-                        l'esthétique minimaliste et contemplative.
-                    </p>
-                </div>
-
-                <!-- FineArt Baryta -->
-                <div class="paper-card">
-                    <h4>FineArt Baryta</h4>
-                    <span class="paper-badge" style="background: #d4af37;">⭐ PREMIUM</span>
-                    <div class="paper-specs">
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Texture</span>
-                            <span class="paper-spec-value">Semi-brillant</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Grammage</span>
-                            <span class="paper-spec-value">325 g/m²</span>
-                        </div>
-                        <div class="paper-spec">
-                            <span class="paper-spec-label">Rendu</span>
-                            <span class="paper-spec-value">Couche baryté</span>
-                        </div>
-                    </div>
-                    <p class="paper-description">
-                        Le plus épais et noble de la gamme. Couche baryté comme la photo argentique traditionnelle. 
-                        Profondeur et détails absolus.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Cadre -->
-        <div class="frame-section">
-            <div class="frame-content">
-                <div class="frame-info">
-                    <h3>Cadre Museum Besau-Marguerre</h3>
-                    <p style="color: #666; line-height: 1.8; margin-bottom: 30px;">
-                        Cadre design exclusif créé par le Studio Besau-Marguerre pour WhiteWall. 
-                        Qualité museum, finition impeccable, prêt à accrocher.
-                    </p>
-                    
-                    <div class="frame-features">
-                        <div class="frame-feature">
-                            <span class="frame-feature-icon">✓</span>
-                            <div>
-                                <strong>Design exclusif</strong><br>
-                                <span style="color: #666; font-size: 0.95rem;">Studio Besau-Marguerre</span>
-                            </div>
-                        </div>
-                        <div class="frame-feature">
-                            <span class="frame-feature-icon">✓</span>
-                            <div>
-                                <strong>Qualité museum</strong><br>
-                                <span style="color: #666; font-size: 0.95rem;">Finition impeccable</span>
-                            </div>
-                        </div>
-                        <div class="frame-feature">
-                            <span class="frame-feature-icon">✓</span>
-                            <div>
-                                <strong>Prêt à accrocher</strong><br>
-                                <span style="color: #666; font-size: 0.95rem;">Système de fixation inclus</span>
-                            </div>
-                        </div>
-                        <div class="frame-feature">
-                            <span class="frame-feature-icon">✓</span>
-                            <div>
-                                <strong>Protection verre</strong><br>
-                                <span style="color: #666; font-size: 0.95rem;">Conservation optimale</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem;">Mes œuvres sont disponibles sur</h2>
                 
-                <div class="frame-pricing-box">
-                    <h4>Supplément Cadre</h4>
-                    <div class="frame-price-item">
-                        <span>100 x 70 cm</span>
-                        <strong style="color: #8b7355;">+CHF 780</strong>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                    <!-- Art24 -->
+                    <div style="background: #f8f8f8; padding: 3rem; border-radius: 8px; text-align: center;">
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Art24.com</h3>
+                        <p style="color: #666; margin-bottom: 2rem; font-size: 1.0625rem;">
+                            Plateforme suisse dédiée à l'art contemporain et la photographie fine-art
+                        </p>
+                        <a href="https://art24.com" target="_blank" class="cta">Visiter la boutique</a>
                     </div>
-                    <div class="frame-price-item">
-                        <span>105 x 70 cm</span>
-                        <strong style="color: #8b7355;">+CHF 810</strong>
-                    </div>
-                    <div class="frame-price-item">
-                        <span>120 x 80 cm</span>
-                        <strong style="color: #8b7355;">+CHF 990</strong>
-                    </div>
-                    <div class="frame-price-item">
-                        <span>140 x 100 cm</span>
-                        <strong style="color: #8b7355;">+CHF 1'380</strong>
-                    </div>
-                    <div class="frame-price-item">
-                        <span>150 x 100 cm</span>
-                        <strong style="color: #8b7355;">+CHF 1'470</strong>
+
+                    <!-- Iazzu -->
+                    <div style="background: #f8f8f8; padding: 3rem; border-radius: 8px; text-align: center;">
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Iazzu.com</h3>
+                        <p style="color: #666; margin-bottom: 2rem; font-size: 1.0625rem;">
+                            Galerie en ligne spécialisée dans la photographie d'art en éditions limitées
+                        </p>
+                        <a href="https://iazzu.com" target="_blank" class="cta">Visiter la boutique</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Informations -->
+            <div style="background: #f8f8f8; padding: 3rem; border-radius: 8px; margin-bottom: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Comment commander</h3>
+                
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <div style="display: flex; align-items: start; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="min-width: 40px; height: 40px; background: #2C2C2C; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Parcourez les galeries</h4>
+                            <p style="color: #666;">Explorez mes différentes séries photographiques et choisissez l'œuvre qui vous parle</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: start; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="min-width: 40px; height: 40px; background: #2C2C2C; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Choisissez votre format</h4>
+                            <p style="color: #666;">Sélectionnez le format qui correspond à votre espace (40×60, 60×90, 80×120 cm)</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: start; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="min-width: 40px; height: 40px; background: #2C2C2C; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Commandez en ligne ou contactez-moi</h4>
+                            <p style="color: #666;">Passez commande sur Art24.com / Iazzu.com ou contactez-moi directement pour un devis personnalisé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Garanties -->
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Garanties et qualité</h3>
+                
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: flex; gap: 1rem; padding: 1.5rem; background: #f8f8f8; border-radius: 8px;">
+                        <div style="font-size: 2rem;">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Éditions ultra-limitées</h4>
+                            <p style="color: #666; margin: 0;">Chaque œuvre est limitée à 3 exemplaires maximum, garantissant exclusivité et rareté</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; padding: 1.5rem; background: #f8f8f8; border-radius: 8px;">
+                        <div style="font-size: 2rem;">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Qualité muséale</h4>
+                            <p style="color: #666; margin: 0;">Impression WhiteWall sur papier Hahnemühle Photo Rag 308g, conservation 100+ ans</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; padding: 1.5rem; background: #f8f8f8; border-radius: 8px;">
+                        <div style="font-size: 2rem;">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Certificat d'authenticité</h4>
+                            <p style="color: #666; margin: 0;">Chaque tirage est accompagné d'un certificat signé et numéroté</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; padding: 1.5rem; background: #f8f8f8; border-radius: 8px;">
+                        <div style="font-size: 2rem;">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Livraison sécurisée</h4>
+                            <p style="color: #666; margin: 0;">Emballage professionnel et livraison assurée en Suisse et Europe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="margin-bottom: 1.5rem;">Une question sur une œuvre ?</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 1.0625rem;">
+                    Contactez-moi pour obtenir plus d'informations ou un devis personnalisé
+                </p>
+                <a class='cta' href='/blanchoud-photography/contact.html'>Me contacter</a>
+            </div>
+
         </div>
+    </section>
 
-        <!-- Livraison -->
-        <section class="delivery-section">
-            <h2 class="section-title" style="font-size: 2rem; text-align: center; margin-bottom: 20px;">
-                Livraison & Assurance
-            </h2>
-            <p style="text-align: center; color: #666; margin-bottom: 40px;">
-                Toutes les œuvres sont livrées par DHL Express avec assurance complète selon la valeur.
-            </p>
-            
-            <div class="delivery-options">
-                <div class="delivery-card">
-                    <div class="delivery-flag">🇨🇭</div>
-                    <div class="delivery-region">Suisse</div>
-                    <div class="delivery-price">INCLUS</div>
-                    <div class="delivery-details">
-                        Livraison DHL Express 1-3 jours<br>
-                        Assurance complète<br>
-                        Signature obligatoire<br>
-                        Emballage professionnel
-                    </div>
-                </div>
-                
-                <div class="delivery-card">
-                    <div class="delivery-flag">🇪🇺</div>
-                    <div class="delivery-region">Europe</div>
-                    <div class="delivery-price">+CHF 180</div>
-                    <div class="delivery-details">
-                        Livraison DHL Express 2-5 jours<br>
-                        Assurance complète<br>
-                        Signature obligatoire<br>
-                        Emballage professionnel
-                    </div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; color: #666; font-size: 0.95rem; margin-top: 30px;">
-                🌍 Autres destinations : Devis personnalisé sur demande
-            </p>
-        </section>
-
-        <!-- CTA -->
-        <div class="cta-section">
-            <h3>Réserver une Œuvre</h3>
-            <p>
-                Contactez-moi pour réserver votre tirage d'exception.<br>
-                Je réponds personnellement à chaque demande.
-            </p>
-            <a href="contact.html" class="btn-white">Me contacter</a>
-        </div>
-
-        <!-- Garanties -->
-        <section class="pricing-section" style="margin-top: 60px;">
-            <h2 class="section-title" style="font-size: 2rem; text-align: center; margin-bottom: 40px;">
-                Garanties & Engagements
-            </h2>
-            
-            <div style="max-width: 800px; margin: 0 auto; color: #666; line-height: 1.8;">
-                <div style="padding: 30px; background: white; border: 1px solid #e8e6e0; border-radius: 8px; margin-bottom: 20px;">
-                    <h4 style="color: #8b7355; margin-bottom: 15px;">✓ Édition Ultra-Limitée 3/3</h4>
-                    <p>Chaque œuvre existe en seulement 3 exemplaires numérotés au monde. Une fois vendus, 
-                    le fichier source est définitivement archivé.</p>
-                </div>
-                
-                <div style="padding: 30px; background: white; border: 1px solid #e8e6e0; border-radius: 8px; margin-bottom: 20px;">
-                    <h4 style="color: #8b7355; margin-bottom: 15px;">✓ Certificat d'Authenticité</h4>
-                    <p>Chaque tirage est accompagné d'un certificat signé mentionnant le numéro d'édition, 
-                    le format, le papier et les caractéristiques techniques.</p>
-                </div>
-                
-                <div style="padding: 30px; background: white; border: 1px solid #e8e6e0; border-radius: 8px; margin-bottom: 20px;">
-                    <h4 style="color: #8b7355; margin-bottom: 15px;">✓ Conservation 100+ Ans</h4>
-                    <p>Papiers Hahnemühle Museum garantis 100 ans minimum. Impression laboratoire WhiteWall 
-                    avec encres pigmentaires ultrastables.</p>
-                </div>
-                
-                <div style="padding: 30px; background: white; border: 1px solid #e8e6e0; border-radius: 8px;">
-                    <h4 style="color: #8b7355; margin-bottom: 15px;">✓ Paiement Échelonné Possible</h4>
-                    <p>Pour faciliter l'acquisition d'une œuvre d'exception, un paiement en 3 fois sans frais 
-                    peut être proposé sur demande.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Sylvain Blanchoud</h4>
-                <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="collection.html">Collection</a></li>
-                    <li><a href="galeries.html">Galeries</a></li>
-                    <li><a href="boutique.html">Boutique</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
+        <div class="footer-content">
+            <div class="footer-section">
                 <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
-                    <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
-                </ul>
+                <p>Sylvain Blanchoud</p>
+                <p>Abram-Louis Breguet 8<br>2000 Neuchâtel, Suisse</p>
+                <p>+41 78 808 59 58</p>
+                <p><a href="mailto:sylvainblanchoud@bluewin.ch">sylvainblanchoud@bluewin.ch</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href='/blanchoud-photography/'>Accueil</a>
+                <a href='/blanchoud-photography/galeries.html'>Galeries</a>
+                <a href='/blanchoud-photography/collection.html'>Collection</a>
+                <a href='/blanchoud-photography/a-propos.html'>À Propos</a>
+                <a href='/blanchoud-photography/contact.html'>Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Disponible sur</h4>
+                <a href="https://art24.com" target="_blank">Art24.com</a>
+                <a href="https://iazzu.com" target="_blank">Iazzu.com</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <p>Éditions limitées (3 ex.)</p>
+                <p>Tirages WhiteWall</p>
+                <p>Papier Hahnemühle</p>
+                <p>Certificat d'authenticité</p>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2025 Sylvain Blanchoud Photography</p>
+            <p>&copy; 2025 Sylvain Blanchoud Photography. Tous droits réservés.</p>
         </div>
     </footer>
 </body>
