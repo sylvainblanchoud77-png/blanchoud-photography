@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Journal — Blanchoud Photography</title>
+  <title>Billet — Blanchoud Photography</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,19 +12,15 @@
       <a class="brand" href="index.html">Blanchoud Photography</a>
       <div class="spacer"></div>
       <a class="link" href="gallery.html">Galerie</a>
-      <a class="link" aria-current="page" href="blog.html">Journal</a>
+      <a class="link" href="blog.html">Journal</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">◐</button>
     </nav>
   </header>
 
-  <main id="main" class="blog">
-    <h1 class="page-title">Journal</h1>
-    <div id="posts" class="post-list" aria-live="polite"></div>
+  <main id="main" class="post">
+    <article id="post" class="prose"></article>
+    <nav class="post-nav"><a class="btn ghost" href="blog.html">← Retour</a></nav>
   </main>
-
-  <footer class="site-footer small">
-    <span class="muted">Les billets sont des fichiers Markdown dans /blog de votre dépôt.</span>
-  </footer>
 
   <script src="https://unpkg.com/marked/marked.min.js" defer></script>
   <script src="app.js" type="module" defer></script>

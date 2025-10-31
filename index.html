@@ -1,117 +1,82 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vaud — Galerie | Blanchoud Photography</title>
-  <meta name="description" content="Série Vaud — tirages Fine Art en éditions ultra-limitées.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/prima-style.css">
-  <style>
-    .grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-    figure{margin:0;position:relative;overflow:hidden}
-    img{width:100%;height:auto;display:block}
-    figcaption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);color:#fff;padding:8px 12px;font-size:14px}
-    .muted{opacity:.6}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blanchoud Photography — Lumières, matières et fragments de réel</title>
+  <meta name="description" content="Portfolio photo de Sylvain Blanchoud. Lumières, matières et fragments de réel." />
+  <meta property="og:title" content="Blanchoud Photography" />
+  <meta property="og:description" content="Lumières, matières et fragments de réel" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<votre-utilisateur>.github.io/<votre-repo>/" />
+  <meta property="og:image" content="images/cover.jpg" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#e6e6e6">
+  <script>window.__CONFIG__ = {
+    owner: "sylvainblanchoud77-png",
+    repo: "blanchoud-photography",
+    imagesDir: "images",
+    blogDir: "blog",
+    siteTitle: "Blanchoud Photography"
+  };</script>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="../../index.html" class="logo">SYLVAIN BLANCHOUD</a>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Accueil</a></li>
-        <li><a href="../../collection.html">Collection</a></li>
-        <li><a href="../../galerie.html" class="active">Galerie</a></li>
-        <li><a href="../../blog.html">Journal</a></li>
-        <li><a href="../../boutique.html">Boutique</a></li>
-        <li><a href="../../a-propos.html">À Propos</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="hero" style="text-align:center;padding:60px 20px;">
-    <h1>Vaud</h1>
-    <p class="muted">Placez vos photos **dans CE dossier** (le même que cette page). Indiquez leurs noms dans <code>images.txt</code>, un nom par ligne.</p>
-    <p><a class="btn" href="../../galerie.html">← Retour à la Galerie</a></p>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principale">
+      <a class="brand" href="index.html" aria-current="page">Blanchoud Photography</a>
+      <div class="spacer" role="presentation"></div>
+      <a class="link" href="gallery.html">Galerie</a>
+      <a class="link" href="blog.html">Journal</a>
+      <a class="link" href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">◐</button>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="section">
-      <div id="grid" class="grid"></div>
-      <p id="hint" class="muted" style="margin-top:16px"></p>
+  <main id="main" class="home">
+    <section class="hero" aria-label="Héro">
+      <div class="hero-inner">
+        <h1 class="headline">Blanchoud Photography</h1>
+        <p class="tagline">Lumières, matières et fragments de réel</p>
+        <div class="cta-row">
+          <a class="btn primary" href="gallery.html">Voir la galerie</a>
+          <a class="btn ghost" href="blog.html">Lire le journal</a>
+        </div>
+      </div>
+      <div class="hero-marquee" aria-hidden="true"></div>
+    </section>
+
+    <section class="about" aria-label="À propos">
+      <div class="prose">
+        <h2>Photographie sensible</h2>
+        <p>Entre matière et silence, mes images cherchent le point de bascule où un détail devient paysage. Série, errance, journal — la photographie comme respiration.</p>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer" id="contact">
     <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Sylvain Blanchoud</h4>
-        <p>Photographe Fine Art<br>Neuchâtel, Suisse</p>
+      <div>
+        <h3>Contact</h3>
+        <p>
+          <a href="mailto:contact@sylvainblanchoud.ch" class="link">contact@sylvainblanchoud.ch</a><br>
+          <span class="muted">Basé en Suisse · Disponible sur commande</span>
+        </p>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="../../collection.html">Collection</a></li>
-          <li><a href="../../galerie.html">Galerie</a></li>
-          <li><a href="../../blog.html">Journal</a></li>
-          <li><a href="../../boutique.html">Boutique</a></li>
-        </ul>
+      <div>
+        <h3>Réseaux</h3>
+        <p><a target="_blank" rel="noopener" class="link" href="https://github.com/sylvainblanchoud77-png">GitHub</a></p>
       </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+41788085958">+41 78 808 59 58</a></li>
-          <li><a href="mailto:sylvainblanchoud@bluewin.ch">Email</a></li>
-          <li><a href="../../contact.html">Formulaire de contact</a></li>
-        </ul>
+      <div>
+        <h3>Crédits</h3>
+        <p>Site statique propulsé par GitHub Pages. Code libre.</p>
       </div>
-      <div class="footer-col">
-        <h4>Informations</h4>
-        <ul>
-          <li><a href="../../a-propos.html">À Propos</a></li>
-          <li>CHF 4'000 - 7'000</li>
-          <li>Papier Hahnemühle</li>
-          <li>Certificat d'authenticité</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Sylvain Blanchoud Photography • Tous droits réservés</p>
     </div>
   </footer>
 
-  <script>
-  // Charge 'images.txt' dans le même dossier, et rend la grille.
-  // Format: un nom de fichier d'image par ligne (JPG/PNG/WebP), sans guillemets.
-  fetch('images.txt', {cache:'no-cache'})
-    .then(r => r.ok ? r.text() : '')
-    .then(txt => {
-      const lines = txt.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
-      const grid = document.getElementById('grid');
-      const hint = document.getElementById('hint');
-      if (!lines.length) {
-        hint.innerHTML = "Ajoutez vos images dans ce dossier et listez-les dans <code>images.txt</code> (un nom par ligne). Exemple :<br> vaud-01.jpg\nvaud-02.jpg\nvaud-03.jpg";
-        return;
-      }
-      for (const name of lines) {
-        const fig = document.createElement('figure');
-        fig.className = 'gallery-item';
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.src = name; // ← image LOCALE dans le même dossier
-        img.alt = "Vaud — " + name;
-        const cap = document.createElement('figcaption');
-        cap.className = 'gallery-overlay';
-        cap.innerHTML = `<h3>Vaud</h3><p>${name}</p>`;
-        fig.appendChild(img);
-        fig.appendChild(cap);
-        grid.appendChild(fig);
-      }
-      hint.textContent = lines.length + " image(s) listée(s) dans images.txt";
-    })
-    .catch(_ => document.getElementById('hint').textContent = "Impossible de lire images.txt (assurez-vous qu'il existe).");
-  </script>
+  <script src="https://unpkg.com/marked/marked.min.js" defer></script>
+  <script src="app.js" type="module" defer></script>
 </body>
 </html>

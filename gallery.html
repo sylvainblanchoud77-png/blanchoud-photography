@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie — Blanchoud Photography</title>
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#111">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principale">
+      <a class="brand" href="index.html">Blanchoud Photography</a>
+      <div class="spacer" role="presentation"></div>
+      <a class="link" aria-current="page" href="gallery.html">Galerie</a>
+      <a class="link" href="blog.html">Journal</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">◐</button>
+    </nav>
+  </header>
+
+  <main id="main" class="gallery">
+    <h1 class="page-title">Galerie</h1>
+    <div id="filters" class="filters" role="toolbar" aria-label="Filtres">
+      <input id="search" class="input" type="search" placeholder="Rechercher (nom de fichier, tag)">
+      <select id="sort" class="select" aria-label="Trier">
+        <option value="name">Nom</option>
+        <option value="date">Date</option>
+        <option value="size">Taille</option>
+      </select>
+      <button id="shuffle" class="btn ghost">Mélanger</button>
+    </div>
+    <div id="grid" class="masonry" aria-live="polite"></div>
+
+    <dialog id="lightbox" aria-label="Visionneuse">
+      <button id="closeLightbox" aria-label="Fermer" class="close">×</button>
+      <img id="lightboxImg" alt="" />
+      <p id="lightboxCaption" class="caption"></p>
+    </dialog>
+  </main>
+
+  <footer class="site-footer small">
+    <span class="muted">Images chargées depuis GitHub · Lazy loading.</span>
+  </footer>
+
+  <script src="https://unpkg.com/marked/marked.min.js" defer></script>
+  <script src="app.js" type="module" defer></script>
+</body>
+</html>
