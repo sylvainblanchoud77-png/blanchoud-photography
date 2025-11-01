@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Photo - Blanchoud</title>
+    <style>
+        body { font-family: Georgia, serif; background: #fafaf8; color: #1a1a1a; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #d4af37; text-align: center; }
+        .form { background: white; padding: 30px; border-radius: 10px; margin: 20px 0; }
+        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
+        button { background: #d4af37; color: white; padding: 15px 30px; border: none; cursor: pointer; }
+        #result { background: #1a1a1a; color: white; padding: 15px; margin-top: 20px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Studio Photo 📸</h1>
+        <div class="form">
+            <h2>Nouvelle Photo</h2>
+            <input type="text" id="t" placeholder="Titre">
+            <select id="g">
+                <option>neuchatel</option>
+                <option>vaud</option>
+                <option>naples</option>
+            </select>
+            <input type="url" id="u" placeholder="URL image">
+            <input type="number" id="p" value="4900">
+            <textarea id="d" placeholder="Description"></textarea>
+            <button onclick="go()">Créer</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+        function go() {
+            var r = '---\ntitle: "' + document.getElementById('t').value + '"\n';
+            r += 'gallery: "' + document.getElementById('g').value + '"\n';
+            r += 'image: "' + document.getElementById('u').value + '"\n';
+            r += 'price: ' + document.getElementById('p').value + '\n---\n\n';
+            r += document.getElementById('d').value;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerText = r;
+        }
+    </script>
+</body>
+</html>
+```
+
+### **ÉTAPE 2 : Testez avec un nom COMPLETEMENT différent**
+
+Utilisez cette URL :
+```
+https://blanchoud-photography.pages.dev/studio.html
