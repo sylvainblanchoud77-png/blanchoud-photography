@@ -1,9 +1,0 @@
-{
-  "name": "Blanchoud Photography",
-  "short_name": "Blanchoud",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#0c0c0c",
-  "theme_color": "#e6e6e6",
-  "icons": [{ "src": "favicon.ico", "sizes": "64x64 32x32 16x16", "type": "image/x-icon" }]
-}
